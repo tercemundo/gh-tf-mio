@@ -1,6 +1,13 @@
-steps:
-  - uses: gliech/create-github-secret-action@v1
-    with:
-      name: FRONT_DOOR_PASSWORD
-      value: Eternia
-      pa_token: ${{ secrets.PA_TOKEN }}
+name: "PruebaSecrets"
+on:
+  workflow_dispatch:
+jobs:
+  terraform_apply:
+    name: "PruebaSecrets"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gliech/create-github-secret-action@v1
+        with:
+          name: FRONT_DOOR_PASSWORD
+          value: Eternia
+          pa_token: ${{ secrets.PA_TOKEN }}
